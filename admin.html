@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><title>Admin - Chilakamma Orders</title></head>
+<body>
+  <h2>Live Orders</h2>
+  <ul id="orderList"></ul>
+
+  <script type="module">
+    import { db } from "./assets/firebase.js";
+    import { ref, onValue } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-database.js";
+    const ordersRef = ref(db, "orders");
+    const list = document.getElementById("orderList");
+
+    onValue(ordersRef, (snapshot) => {
+      list.innerHTML = "";
+      snapshot.forEach((child) => {
+        const order = child.val();
+        list.innerHTML += `<li>${order.product} - ₹${order.price} (Payment ID: ${order.payment_id})</li>`;
+      });
+    });
+  </script>
+</body>
+</html>

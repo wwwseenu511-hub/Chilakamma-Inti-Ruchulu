@@ -1,0 +1,38 @@
+body {
+  font-family: "Poppins", sans-serif;
+  background: #fffaf4;
+  color: #333;
+  margin: 0;
+  text-align: center;
+}
+header {
+  background: linear-gradient(90deg, #c0392b, #1e8449);
+  color: white;
+  padding: 1rem;
+  border-radius: 0 0 20px 20px;
+}
+.logo {
+  width: 80px;
+  border-radius: 50%;
+}
+#product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+.product {
+  background: white;
+  border-radius: 15px;
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+button {
+  background: #c0392b;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+button:hover { background: #1e8449; }
